@@ -3,35 +3,31 @@
 /**
  * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 0.
  */
-
 int main(void)
 {
-	int i, j, k, l;
+	int num1, num2;
 
-	for (i = 48; i < 58; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		for (j = 48; (j < 58); j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			for (k = i; (k < 58); k++)
-			{
-				for (l = j + 1; (l < 58); l++)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(32);
-					putchar(k);
-					putchar(l);
-					if ((i != 57) || (j != 56) || (k != 57) || (l != 57))
-					{
-						putchar(44);
-						putchar(32);
-					}
-				}
-			}
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
-	putchar(10);
+
+	putchar('\n');
+
 	return (0);
 }
