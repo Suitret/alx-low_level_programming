@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -25,7 +26,7 @@ int main(void)
 	}
 	else
 	{
-		printf("Last digit of %d is %d and is %d\n", n, tmp, tmp);
+		printf("Last digit of %d is %d and is 0\n", n, tmp);
 	}
 	return (0);
 }
