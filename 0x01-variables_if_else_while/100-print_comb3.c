@@ -10,9 +10,9 @@ int main(void)
 {
 	int i, j;
 
-	for (i = 48; i < 58; i++)
+	for (i = 48; i < 57; i++)
 	{
-		for (j = 48; (i < j) && (j < 58); j++)
+		for (j = i + 1; j < 58; j++)
 		{
 			putchar(i);
 			putchar(j);
