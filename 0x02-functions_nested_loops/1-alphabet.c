@@ -21,9 +21,12 @@ int main(void)
 
 void print_alphabet(void)
 {
-	for (int i = 97; i < 123; i++)
+	int i = 97;
+
+	while (i != 123)
 	{
 		_putchar(i);
+		i++;
 	}
 	_putchar('\n');
 }
