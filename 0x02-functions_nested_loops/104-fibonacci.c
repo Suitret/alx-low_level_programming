@@ -25,6 +25,8 @@ int main(void)
 		temp = b;
 		b += a;
 		a = temp;
+		if (b < 0)
+			b = -b;
 		n--;
 	}
 	printf("\n");
