@@ -27,6 +27,6 @@ int main(void)
 		a = temp;
 		n--;
 	}
-
+	printf("\n");
 	return (0);
 }
