@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "1-alphabet.h"
+#include "main.h"
 
 /**
  * main - Entry point
