@@ -15,19 +15,24 @@ int main(void)
 }
 
 /**
- * print_alphabet - print alphabet in lowercase
+ * print_alphabet_x10 - print alphabet in lowercase
  *
  * Return: void
  */
 
 void print_alphabet_x10(void)
 {
-	for (int i = 0; i < 10; i++)
+	int i = 0, j = 97;
+
+	while (i != 10)
 	{
-		for (int j = 97; j < 123; j++)
+		while (j != 123)
 		{
 			_putchar(j);
+			j++;
 		}
+		i++;
+		j = 97;
 		_putchar('\n');
 	}
 }
