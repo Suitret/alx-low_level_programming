@@ -9,18 +9,18 @@
 
 int main(void)
 {
-	int a = 1, b = 2, n = 47, temp;
+	long long int a = 1, b = 2, n = 49, temp;
 
-	printf("%d, ", a);
+	printf("%lld, ", a);
 	while (n != 0)
 	{
 		if (n != 1)
 		{
-			printf("%d, ", b);
+			printf("%lld, ", b);
 		}
 		else
 		{
-			printf("%d", b);
+			printf("%lld", b);
 		}
 		temp = b;
 		b += a;
