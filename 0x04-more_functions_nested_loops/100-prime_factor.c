@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+
 /**
  * isPrime - check if a number is prime or not
  * @n: number to check
@@ -32,10 +32,9 @@ int isPrime(int n)
 int main(void)
 {
 	unsigned long int n = 612852475143, prime;
-	double temp = sqrt(n);
 	int i;
 
-	for (i = 2; i < temp; i++)
+	for (i = 2; i < n; i++)
 	{
 		if (isPrime(i) && (n % i == 0))
 		{
