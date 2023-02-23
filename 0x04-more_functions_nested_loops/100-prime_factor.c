@@ -27,9 +27,9 @@ int isPrime(int n)
 int main(void)
 {
 	long int n = 612852475143;
-	int i, prime, tmp = sqrt(n);
+	int i, prime, temp = sqrt(n);
 
-	for (i = 2; i < n; i++)
+	for (i = 2; i < temp; i++)
 	{
 		if (isPrime(i) && (n % i == 0))
 		{
@@ -37,6 +37,6 @@ int main(void)
 			prime = i;
 		}
 	}
-	printf("%ld\n", prime);
+	printf("%d\n", prime);
 	return (0);
 }
