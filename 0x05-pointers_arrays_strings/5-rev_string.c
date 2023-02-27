@@ -10,16 +10,12 @@
 
 void rev_string(char *s)
 {
-	int i, n = strlen(s);
-	char tab[n];
+	int i, j = strlen(s), temp;
 
-	for (i = 0; i < n; i++)
+	for (i = 0, j -= 1; i < j; i++, j--)
 	{
-		tab[i] = *(s + i);
-	}
-
-	for (i = 0; i < n; i++)
-	{
-		*(s + i) = *(tab + n - 1 - i);
+		temp = *(s + i);
+		*(s + i) = *(s + j);
+		*(s + j) = temp;
 	}
 }
