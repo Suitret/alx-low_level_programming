@@ -11,6 +11,7 @@ int _atoi(char *s)
 {
 	int sign = 1;
 	int num = 0;
+	int max_num = INT_MAX / 10;
 
 	while (*s != '\0')
 	{
@@ -20,6 +21,10 @@ int _atoi(char *s)
 		}
 		else if (*s >= '0' && *s <= '9')
 		{
+			if (num > max_num || (num == max_num && digit > INT_MAX % 10))
+			{
+				break;
+			}
 			num = num * 10 + (*s - '0');
 		}
 		else if (num != 0)
