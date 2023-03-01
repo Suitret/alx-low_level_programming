@@ -10,7 +10,7 @@
 
 char *string_toupper(char *s)
 {
-	int i, n = strlen(tab);
+	int i, n = strlen(s);
 
 	for (i = 0; i < n; i++)
 		*(s + i) = toupper(*(s + i));
