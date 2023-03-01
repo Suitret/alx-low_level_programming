@@ -39,7 +39,7 @@ int comeAfterSpecial(char *s, int n)
 
 char *cap_string(char *s)
 {
-	int i, n = strlen(tab);
+	int i, n = strlen(s);
 
 	for (i = 0; i < n; i++)
 	{
