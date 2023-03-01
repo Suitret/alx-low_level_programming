@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_number - prints any integer
@@ -9,15 +10,15 @@
 
 void print_number(int n)
 {
-	int value = 0, digit;
+	int value = 0, digit, temp = abs(n);
 
 	if (n < 0)
 		_putchar('-');
 
-	while (n)
+	while (temp)
 	{
-		value = 10 * value + n % 10;
-		n /= 10;
+		value = 10 * value + temp % 10;
+		temp /= 10;
 	}
 
 	while (value)
