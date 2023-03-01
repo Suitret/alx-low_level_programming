@@ -20,7 +20,7 @@ void print_number(int n)
 		n /= 10;
 	}
 
-	while ((value != 0) && (digit != 0))
+	while (value)
 	{
 		digit = value % 10;
 		value = value / 10;
