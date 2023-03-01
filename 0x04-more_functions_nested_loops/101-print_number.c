@@ -1,37 +1,32 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * print_number - print a given number
- * @n: given number
+ * print_number - prints any integer
+ * @n: given integer
  * Return: void
  */
 
 void print_number(int n)
 {
-	int divisor = 1;
-	int digit, abs_value;
+	int value = 0, digit, temp = abs(n);
 
 	if (n < 0)
-	{
 		_putchar('-');
-		abs_value = -n;
-	}
-	else
+	else if (n == 0)
+		_putchar('0');
+
+	while (temp)
 	{
-		abs_value = n;
+		value = 10 * value + temp % 10;
+		temp /= 10;
 	}
 
-	while (abs_value / divisor >= 10)
+	while (value)
 	{
-		divisor *= 10;
-	}
-
-	while (divisor > 0)
-	{
-		digit = abs_value / divisor;
-		_putchar(digit + '0');
-		abs_value %= divisor;
-		divisor /= 10;
+		digit = value % 10;
+		value = value / 10;
+		_putchar('0' + digit);
 	}
 }
