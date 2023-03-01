@@ -11,7 +11,7 @@
 
 int comeAfterSpecial(char *s, int n)
 {
-	int temp = *(s + n - 1);
+	int temp = *(s + n - 1), i;
 	int tab1[] = {' ', '\t', '\n', ',', ';', '.'};
 	int tab2[] = {'!', '"', '(', ')', '{', '}', '?'};
 
@@ -45,5 +45,6 @@ char *cap_string(char *s)
 	{
 		if (isalpha(*(s + i)) && comeAfterSpecial(s, i))
 			*(s + i) = toupper(*(s + i));
+	}
 	return (s);
 }
