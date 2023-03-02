@@ -9,19 +9,19 @@
 
 char *rot13(char *str)
 {
-	int i = 0, n = strlen(str);
+	int i = 0, j, n = strlen(str);
+	char *first = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *second = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int l = strlen(first);
 
 	while (i < n)
 	{
-		while (isalpha(*(s + i)))
+		j = 0;
+		while (j < l)
 		{
-			if (islower(*(s + i)))
-			{
-				*(s + i) = ((*(s + i) - 97 + 13) % 26) + 97;
-				break;
-			}
-			*(s + i) = ((*(s + i) - 65 + 13) % 26) + 65;
-			break;
+			if (*(first + j) == *(str + i))
+				*(s + i) = 
+			j++;
 		}
 		i++;
 	}
