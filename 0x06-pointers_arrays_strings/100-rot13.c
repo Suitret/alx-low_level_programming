@@ -9,11 +9,11 @@
 
 char *rot13(char *str)
 {
-	int i, n = strlen(str);
+	int i = 0, n = strlen(str);
 
-	for (i = 0; i < n; i++)
+	while (i < n)
 	{
-		for (; isalpha(*(s + i));)
+		while (isalpha(*(s + i)))
 		{
 			if (islower(*(s + i)))
 			{
@@ -23,6 +23,7 @@ char *rot13(char *str)
 			*(s + i) = ((*(s + i) - 65 + 13) % 26) + 65;
 			break;
 		}
+		i++;
 	}
 	return (str);
 }
