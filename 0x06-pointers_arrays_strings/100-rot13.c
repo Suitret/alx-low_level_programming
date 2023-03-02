@@ -21,6 +21,7 @@ char *rot13(char *str)
 				break;
 			}
 			*(s + i) = ((*(s + i) - 65 + 13) % 26) + 65;
+			break;
 		}
 	}
 	return (str);
