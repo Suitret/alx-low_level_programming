@@ -10,7 +10,7 @@
 
 void print_number(int n)
 {
-	int value = 0, digit, temp = abs(n);
+	unsigned int value = 0, digit, temp = abs(n);
 
 	(n == 0) ? _putchar('0') : 0;
 
