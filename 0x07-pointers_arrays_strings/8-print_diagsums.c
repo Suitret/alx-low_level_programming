@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void print_diagsums(int (*a)[size], int size)
+void print_diagsums(int (*a)[], int size)
 {
 	int sum1 = 0, sum2 = 0, i;
 
