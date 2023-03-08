@@ -17,7 +17,6 @@ int sqrtSearchHelper(int i, int N)
 		return (i);
 	else
 		return (sqrtSearchHelper(i + 1, N));
-	}
 }
 
 /**
