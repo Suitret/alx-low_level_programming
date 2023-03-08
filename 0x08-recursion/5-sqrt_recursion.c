@@ -28,5 +28,5 @@ int sqrtSearchHelper(int i, int N)
 
 int _sqrt_recursion(int n)
 {
-	return (sqrtSearchHelper(0, n, n));
+	return (sqrtSearchHelper(1, n));
 }
