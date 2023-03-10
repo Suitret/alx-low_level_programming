@@ -1,9 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+
 /**
- * _isupper - test
- * @c: integer
- * Return: result
+ * _isupper - cheks if a character is upper
+ * @i: ascii value
+ * Return: 0 or 1
  */
 
-int _isupper(int c)
+int _isupper(int i)
 {
+	if (isupper(i))
+		return (1);
+	else
+		return (0);
 }

@@ -1,10 +1,13 @@
+#include <string.h>
+
 /**
- * _strchr - function
- * @dest: char
- * @src: char
- * Return: char
+ * _strchr -  locates a character in a string
+ * @s: pointer on char
+ * @c: character to locate
+ * Return: s
  */
 
-char *_strchr(char *dest, char src)
+char *_strchr(char *s, char c)
 {
+	return (strchr(s, c));
 }

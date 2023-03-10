@@ -1,11 +1,14 @@
+#include <string.h>
+
 /**
- * _strncpy - function
- * @dest: char
- * @src: char
- * @n: int
- * Return: char
+ * _strncat - concatenates two strings
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes from src to be taken
+ * Return: result of concatenation
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
+	return (strncat(dest, src, n));
 }

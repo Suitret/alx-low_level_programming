@@ -1,10 +1,13 @@
+#include <string.h>
+
 /**
- * _strstr - function
- * @dest: char
- * @src: char
- * Return: char
+ * _strstr - locates a substring.
+ * @haystack: pointer on char
+ * @needle: string to identify
+ * Return: haystack
  */
 
-char *_strstr(char *dest, char *src)
+char *_strstr(char *haystack, char *needle)
 {
+	return (strstr(haystack, needle));
 }

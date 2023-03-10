@@ -1,10 +1,13 @@
+#include <string.h>
+
 /**
- * _strspn - function
- * @dest: char
- * @src: char
- * Return: int
+ * _strspn - gets the length of a prefix substring
+ * @s: pointer on char
+ * @accept: string to identify
+ * Return: lenght
  */
 
-unsigned int _strspn(char *dest, char *src)
+unsigned int _strspn(char *s, char *accept)
 {
+	return (strspn(s, accept));
 }

@@ -1,9 +1,12 @@
+#include <stdio.h>
+
 /**
- * _puts - test
- * @c: integer
+ * _puts - prints a string
+ * @str: pointer on character
  * Return: void
  */
 
-void _puts(char *c)
+void _puts(char *str)
 {
+	puts(str);
 }
