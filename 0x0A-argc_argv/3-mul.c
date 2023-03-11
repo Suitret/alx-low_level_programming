@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	if (argc == 3)
-		printf("%d\n", argv[0] * argv[1]);
+		printf("%d\n", argv[2] * argv[1]);
 	else
 		printf("Error\n");
 	return (1);
