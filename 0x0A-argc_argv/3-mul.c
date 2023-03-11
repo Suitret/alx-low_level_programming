@@ -18,5 +18,5 @@ int main(int argc, char *argv[])
 	}
 	temp = *(*argv + 2) * (*(*argv + 1));
 	printf("%d\n", temp);
-	return (0);
+	return (1);
 }
