@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	c = strtol(argv[i], &endptr, 10);
+	c = strtol(argv[1], &endptr, 10);
 	for (i = 0; i < 5; i++)
 	{
 		if (c >= coin[i])
