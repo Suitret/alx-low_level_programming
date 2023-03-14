@@ -17,10 +17,10 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 	{
 		p = (char *)malloc(1);
-	
+
 		if (p == NULL)
 			return (p);
-		
+
 		p = strcpy(p, "");
 		return (p);
 	}
