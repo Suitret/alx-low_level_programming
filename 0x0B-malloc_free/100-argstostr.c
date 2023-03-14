@@ -33,7 +33,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		p = strcat(p, av[i]);
-		len = strlen(av[i]);
+		len = strlen(p);
 		p[len] = '\n';
 		p[len + 1] = '\0';
 	}
