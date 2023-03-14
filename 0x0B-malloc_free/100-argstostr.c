@@ -18,8 +18,14 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	if (ac == 1)
-		return (strcat(av[0], "\n"));
-
+	{
+		len = strlen(av[0]);
+		p = (char *)malloc(len + 2);
+		p = strcat(p, av[0]);
+		p[len] = '\n';
+		p[len + 1] = '\0';
+		return (p);
+	}
 	for (i = 0; i < ac; i++)
 	{
 		len += (strlen(av[i]) + 1);
