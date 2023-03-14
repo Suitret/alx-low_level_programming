@@ -21,6 +21,8 @@ char *argstostr(int ac, char **av)
 	{
 		len = strlen(av[0]);
 		p = (char *)malloc(len + 2);
+		if (p == NULL)
+			return (NULL);
 		p = strcat(p, av[0]);
 		p[len] = '\n';
 		p[len + 1] = '\0';
