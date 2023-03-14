@@ -16,18 +16,39 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		p = (char *)malloc(1);
+		p = (char *)malloc(2);
 
 		if (p == NULL)
 			return (p);
 
-		p = strcpy(p, "");
+		p[0] = '\0';
+		p[1] = '\0';
 		return (p);
 	}
 	else if (s2 == NULL)
-		return (s1);
+	{
+		len1 = strlen(s1);
+		p = (char *)malloc(len1 + 1);
+
+		if (p == NULL)
+			return (p);
+
+		p = strcpy(p, s1);
+		p[len1] = '\0';
+		return (p);
+	}
 	else if (s1 == NULL)
-		return (s2);
+	{
+		len2 = strlen(s2);
+		p = (char *)malloc(len2 + 1);
+
+		if (p == NULL)
+			return (p);
+
+		p = strcpy(p, s2);
+		p[len2] = '\0';
+		return (p);
+	}
 
 	len1 = strlen(s1);
 	len2 = strlen(s2);
