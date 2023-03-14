@@ -18,7 +18,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	if (ac == 1)
-		return (av[0]);
+		return (strcat(av[0], "\n"));
 
 	for (i = 0; i < ac; i++)
 	{
