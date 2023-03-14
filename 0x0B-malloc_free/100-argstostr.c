@@ -11,11 +11,11 @@
 
 char *argstostr(int ac, char **av)
 {
-	int len = 0, i, temp;
+	int len = 0, i;
 	char *p;
 
 	if (ac == 0 || av == NULL)
-		return (av);
+		return (NULL);
 
 	if (ac ==  1)
 		return (av[0]);
@@ -32,7 +32,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{	
-		p = strcat(p, a[i]);
+		p = strcat(p, av[i]);
 	}
 	return (p);
 }
