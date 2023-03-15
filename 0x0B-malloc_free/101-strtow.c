@@ -123,7 +123,8 @@ char **strtow(char *str)
         if ((i == 0 && str[i] != ' ') || (str[i] == ' ' && str[i + 1] != ' '))
             countWord += 1;
     }
-    
+    if (countWord == 0 || strcmp(str, "") == 0)
+		return (NULL);
     p = (char **)malloc((countWord + 1) * sizeof(char *));
     
     if (p == NULL)
