@@ -49,11 +49,10 @@ void setWord(char **p, char *str)
  * allocWord - allocates space for words
  * @p: pointer on pointer
  * @str: given string
- * @size: size of tab
  * Return: void
  */
 
-char **allocWord(char **p, char *str, int size)
+char **allocWord(char **p, char *str)
 {
 	int i, j = 0, k, temp;
 
@@ -113,7 +112,7 @@ char **strtow(char *str)
 	if (p == NULL)
 		return (NULL);
 
-	p = allocWord(p, str, countWord);
+	p = allocWord(p, str);
 
 	if (p == NULL)
 	{
