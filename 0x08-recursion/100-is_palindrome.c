@@ -11,7 +11,7 @@
 
 int verify(char *s, int m, int n)
 {
-	if (m < strlen(s) / 2)
+	if (m < (int)strlen(s) / 2)
 	{
 		if (s[m] == s[n])
 			return (1 + verify(s, m + 1, n - 1));
@@ -31,7 +31,7 @@ int is_palindrome(char *s)
 {
 	int n = strlen(s), m = 0;
 
-	if (s == "")
+	if (strcmp(s, "") == 0)
 		return (1);
 	else if (verify(s, m, n - 1) == n / 2)
 		return (1);
