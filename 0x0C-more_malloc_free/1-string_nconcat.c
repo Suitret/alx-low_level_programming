@@ -23,16 +23,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	l1 = strlen(s1);
 	l2 = strlen(s2);
 
-	if (n == 0)
-		return (s1);
+	if (n < l2)
+		result = malloc(l1 + n + 1);
+	else
+		result = malloc((l1 + l2 + 1));
 
-	result = malloc(l1 + l2 + 1);
 	if (result == NULL)
 		return (result);
 
+	strcpy(result, s1);
+
 	if (n < l2)
-		result = strncat(s1, s2, n);
+		strncat(result, s2, n);
 	else
-		result = strncat(s1, s2, l2);
+		strncat(result, s2, l2);
+
 	return (result);
 }
