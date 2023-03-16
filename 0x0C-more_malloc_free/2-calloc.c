@@ -11,18 +11,17 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
-	int i;
+	size_t nbytes = nmemb * size;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr = malloc(nmemb * size);
+	ptr = malloc(nbytes);
 
 	if (ptr == NULL)
 		return (ptr);
 
-	for (i = 0; i < nmemb; i++)
-		ptr[i * size] = 0;
+	memset(ptr, 0, nbytes);
 
 	return (ptr);
 }
