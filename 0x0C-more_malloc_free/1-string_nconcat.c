@@ -20,13 +20,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else if (s2 == NULL)
 		s2 = strcpy(s2, "");
 
-	l1 = strlen(s1), 
+	l1 = strlen(s1);
 	l2 = strlen(s2);
 
 	if (n < 0)
 		return (NULL);
 
-	result = malloc((l1 + l2 + 1) * sizeof *result);
+	result = malloc(l1 + l2 + 1);
 	if (result == NULL)
 		return (result);
 
