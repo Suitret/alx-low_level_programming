@@ -16,9 +16,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int l1, l2;
 
 	if (s1 == NULL)
-		s1 = strcpy(s1, "");
+		strcpy(s1, "");
 	else if (s2 == NULL)
-		s2 = strcpy(s2, "");
+		strcpy(s2, "");
 
 	l1 = strlen(s1);
 	l2 = strlen(s2);
