@@ -12,13 +12,13 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *result;
+	char *result, tab[] = "";
 	unsigned int l1, l2;
 
 	if (s1 == NULL)
-		strcpy(s1, "");
+		s1 = tab;
 	else if (s2 == NULL)
-		strcpy(s2, "");
+		s2 = tab;
 
 	l1 = strlen(s1);
 	l2 = strlen(s2);
