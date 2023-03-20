@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _isalpha - test
  * @c: integer
