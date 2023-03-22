@@ -4,16 +4,17 @@
 /**
  * print_opcodes - prints opcodes
  * @f: pointer to function
+ * @n: number of bytes
  * Return: void
  */
 
-void print_opcodes(int (*f)(int, char**))
+void print_opcodes(int n, int (*f)(int, char**))
 {
 	unsigned char *opcodes = (unsigned char *)f;
 	int i;
 
 	printf("%.2x", opcodes[0]);
-	for (i = 1; i < sizeof(print_opcodes); i++)
+	for (i = 1; i < n; i++)
 	{
 		printf(" %.2x", opcodes[i]);
 	}
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	print_opcodes(main);
+	print_opcodes(num_bytes, main);
 	return (0);
 }
 
