@@ -9,7 +9,7 @@
  * Return: 0 (Success)
  */
 
-int main(int argc, void *argv[])
+int main(int argc, char *argv[])
 {
 	int (*ptr)(int, int) = NULL, a, b, result;
 
