@@ -30,7 +30,10 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]), b = atoi(argv[3]);
 
 	if ((ptr == op_div || ptr == op_mod) && b == 0)
-		return (NULL);
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
 	result = ptr(a, b);
 	printf("%d", result);
