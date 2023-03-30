@@ -1,21 +1,17 @@
 section .data
-    hello db "Hello, Holberton", 0
-    fmt db "%s\n", 0
+    message db 'Hello, Holberton', 0Ah, 0
 
 section .text
-    global main
-    extern printf
+    global _start
 
-main:
-    push rbp
-    mov rbp, rsp
-
-    push hello
-    push fmt
+_start:
+    ; prepare arguments for printf
+    mov rdi, message
+    xor rax, rax
+    ; call printf
     call printf
-    add rsp, 16
-
-    mov rsp, rbp
-    pop rbp
-    ret
+    ; exit program
+    mov eax, 60
+    xor rdi, rdi
+    syscall
 
