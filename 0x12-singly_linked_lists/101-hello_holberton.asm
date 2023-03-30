@@ -1,13 +1,21 @@
-include Irvine32.inc
+section .data
+    hello db "Hello, Holberton", 0
+    fmt db "%s\n", 0
 
-.data
-	myvar byte "Hello, Holberton\n",0
+section .text
+    global main
+    extern printf
 
-.code
-main PROC
-	mov edx, offset myvar
-	call writestring
-	exit
-main ENDP
+main:
+    push rbp
+    mov rbp, rsp
 
-END main
+    push hello
+    push fmt
+    call printf
+    add rsp, 16
+
+    mov rsp, rbp
+    pop rbp
+    ret
+
