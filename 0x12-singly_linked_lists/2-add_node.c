@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -24,12 +25,12 @@ list_t *add_node(list_t **head, const char *str)
 	if (!temp)
 	{
 		free(node);
-		return (temp);
+		return (NULL);
 	}
 
-	node->len = strlen(str);
-	node->str = temp;
-	node->next = head;
+	*(node->len) = strlen(str);
+	*(node->str) = temp;
+	*(node->next) = head;
 
 	return (node);
 }
