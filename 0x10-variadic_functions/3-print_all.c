@@ -49,39 +49,42 @@ void print_string(va_list valist)
  */
 void print_all(const char * const format, ...)
 {
-	va_list valist;
-	unsigned int i = 0, j = 0;
-	char *separator = "";
+	va_list args;
+	int i = 0;
+	char *str;
 
-    /* list of function pointers for each type */
-	print_fn_t print_fn[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{0, NULL}
-	};
+	va_start(args, format);
 
-	va_start(valist, format);
-
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
-		j = 0;
-		while (print_fn[j].type != 0)
+		switch (format[i])
 		{
-			if (format[i] == print_fn[j].type)
-			{
-				printf("%s", separator);
-				print_fn[j].fn(valist);
-				separator = ", ";
+			case 'c':
+				printf("%c", va_arg(args, int));
 				break;
-			}
-			j++;
+			case 'i':
+				printf("%d", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				break;
+			case 's':
+				str = va_arg(args, char *);
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s", str);
+				break;
+			default:
+				i++;
+				continue;
 		}
+
+		if (format[i + 1])
+			printf(", ");
 		i++;
 	}
 
-	va_end(valist);
+	va_end(args);
 
 	printf("\n");
 }
