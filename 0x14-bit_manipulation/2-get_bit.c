@@ -29,10 +29,10 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (index > idx - 1)
 		return (-1);
-	while (cpt != index)
-	{
-		temp *= 10;
-		cpt++;
-	}
-	return (n & temp);
+
+	if (index == 0)
+		return (n & 1);
+
+	temp = n >> index;
+	return (temp & 1);
 }
