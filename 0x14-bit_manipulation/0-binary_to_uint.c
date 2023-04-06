@@ -29,7 +29,8 @@ int contain_0_or_1(const char *b)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int number = 0, i, j = 1, len;
+	unsigned int number = 0, j = 1, len;
+	int i;
 
 	if (!b)
 		return (0);
@@ -37,7 +38,7 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 
 	len = strlen(b);
-	for (i = 0; i < len; i++)
+	for (i = len - 1; i >= 0; i--)
 	{
 		if (b[i] == '1')
 			number += j;
