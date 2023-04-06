@@ -17,22 +17,31 @@ int max_bits(unsigned long int n)
 }
 
 /**
- * get_bit - returns the bit at index
+ * set_bit - sets the bit at index at 1
  * @n: number
  * @index: index
- * Return: value of bit
+ * Return: 1 or -1
  */
 
-int get_bit(unsigned long int n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int idx = max_bits(n), temp = 1;
+	unsigned long int idx = max_bits(*n), cpt = 0, temp = 1;
 
 	if (index > idx - 1)
 		return (-1);
 
 	if (index == 0)
-		return (n & 1);
+	{
+		*n = (*n) | 1;
+		return (1);
+	}
 
-	temp = n >> index;
-	return (temp & 1);
+	while (cpt != index)
+	{
+		temp *= 2;
+		cpt++;
+	}
+
+	*n = (*n) | temp;
+	return (1);
 }
