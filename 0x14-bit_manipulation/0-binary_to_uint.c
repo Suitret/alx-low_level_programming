@@ -8,7 +8,7 @@
  * Return: 0 or 1
  */
 
-int contain_0_or_1(char *b)
+int contain_0_or_1(const char *b)
 {
 	int i = 0;
 
