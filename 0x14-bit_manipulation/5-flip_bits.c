@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "main.h"
 
 /**
@@ -10,10 +9,15 @@
 
 int max_bits(unsigned long int n)
 {
-	if (n)
-		return (log2(n) + 1);
-	else
-		return (1);
+	int count = 0;
+
+	while (n)
+	{
+		n >>= 1;
+		count++;
+	}
+
+	return (count);
 }
 
 /**
