@@ -3,11 +3,11 @@
 
 /**
  * print_binary - prints n in base 2
- * @n: number
+ * @b: number
  * Return: void
  */
 
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int b)
 {
 	if (b > 1)
 		print_binary(b >> 1);
