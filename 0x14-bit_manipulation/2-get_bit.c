@@ -33,7 +33,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int idx = max_bits(n), temp = 1;
 
 	if (index > idx - 1)
-		return (0);
+		return (-1);
 
 	if (index == 0)
 		return (n & 1);
