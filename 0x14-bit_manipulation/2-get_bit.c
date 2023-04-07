@@ -2,26 +2,7 @@
 #include <math.h>
 #include "main.h"
 
-/**
- * max_bits - returns the max bits for n
- * @n: number
- * Return: integer
- */
-
-int max_bits(unsigned long int n)
-{
-	int count = 0;
-
-	while (n)
-	{
-		n >>= 1;
-		count++;
-	}
-
-	return (count);
-}
-
-/**
+/** 
  * get_bit - returns the bit at index
  * @n: number
  * @index: index
@@ -30,9 +11,9 @@ int max_bits(unsigned long int n)
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int idx = max_bits(n), temp = 1;
+	unsigned long int temp = 1;
 
-	if (index > idx - 1)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 
 	if (index == 0)
