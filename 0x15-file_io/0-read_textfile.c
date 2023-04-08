@@ -4,18 +4,6 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * read_textfile - reads the content of filename
  * @filename: file to read
  * @letters: numbers of chars to print
@@ -27,6 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *fp;
 	size_t count = 0;
 	char c;
+	int nbyte;
 
 	if (!filename || letters <= 0)
 		return (0);
@@ -38,12 +27,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	do {
 		c = fgetc(fp);
-		_putchar(c);
+		nbyte = write(1, &c, 1);
 		count++;
-	} while (count != letters && c != EOF);
+	} while (nbyte == sizeof(char) || count != letters && c != EOF);
 
 	fclose(fp);
-	if (count != letters)
+	if (count != letters || nbyte != sizeof(char))
 		return (0);
 	return (count);
 }
