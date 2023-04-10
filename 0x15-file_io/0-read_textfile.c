@@ -25,14 +25,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!fp)
 		return (0);
 
-	do {
+	while (count != letters && c != EOF)
+	{
 		c = fgetc(fp);
 		nbyte = write(1, &c, 1);
 		count++;
-	} while (nbyte == sizeof(char) || count != letters && c != EOF);
+	}
 
 	fclose(fp);
-	if (count != letters || nbyte != sizeof(char))
+	if (nbyte != sizeof(char))
 		return (0);
 	return (count);
 }
