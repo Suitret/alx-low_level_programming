@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <unistd.h>
+#include "main.h"
 
 /**
  * read_textfile - reads the content of filename
@@ -12,28 +15,32 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp;
-	size_t count = 0;
-	char c;
-	int nbyte;
+	ssize_t ro, rp;
+	char *tab = malloc(letters + 1);
+	int fd;
 
-	if (!filename || letters <= 0)
+	if (!filename || letters == 0 || !tab)
 		return (0);
 
-	fp = fopen(filename, "r");
+	fd = open(filename, O_RDONLY);
 
-	if (!fp)
+	if (fd == -1)
 		return (0);
 
-	while (count != letters && c != EOF)
-	{
-		c = fgetc(fp);
-		nbyte = write(1, &c, 1);
-		count++;
-	}
-
-	fclose(fp);
-	if (nbyte != sizeof(char))
+	ro = read(fd, tab, letters);
+	tab[ro] = '\0';
+	if (ro == -1)
 		return (0);
-	return (count);
+
+	rp = write(STDOUT_FILENO, tab, ro);
+	if (rp == -1)
+		return (0);
+
+	free(tab);
+	close(fd);
+
+	if (ro == rp)
+		return (ro);
+
+	return (0);
 }
