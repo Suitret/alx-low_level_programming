@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -26,7 +27,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	rp = write(fd, text_content, sizeof(text_content));
+	rp = write(fd, text_content, strlen(text_content));
 	if (rp == -1)
 		return (-1);
 
