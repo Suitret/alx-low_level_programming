@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	item = create_item(key, value);
 	if (item)
 	{
-		index = key_index(key, ht->size);
+		index = key_index((const unsigned char *)key, ht->size);
 		current_item = ht->array[index];
 
 		if (current_item)
@@ -40,7 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @value: the value
  * Return: the new node item
  */
-hash_node_t *create_item(char *key, char *value)
+hash_node_t *create_item(const char *key, const char *value)
 {
 	hash_node_t *item = malloc(sizeof(hash_node_t));
 
