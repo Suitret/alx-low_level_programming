@@ -22,11 +22,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		current_item = ht->array[index];
 
 		if (current_item)
-		{
 			item->next = current_item;
-			ht->array[index] = item;
-			return (1);
-		}
+		else
+			item->next = NULL;
+		
 		ht->array[index] = item;
 		return (1);
 	}
