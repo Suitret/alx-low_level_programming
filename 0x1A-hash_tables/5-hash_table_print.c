@@ -10,7 +10,9 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *item;
 	unsigned long int i, flag = 1;
 
-	if (!ht || !ht->array || !ht->size)
+	if (!ht)
+		return;
+	else if (!ht->array || !ht->size)
 		printf("{}\n");
 	else
 	{
