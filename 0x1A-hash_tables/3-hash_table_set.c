@@ -15,10 +15,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!ht || !ht->array || !key || strcmp(key, "") == 0)
 		return (0);
 
+	index = key_index((const unsigned char *)key, ht->size);
+	current_item = ht->array[index];
+
+	while (current_item)
+	{
+		if (strcmp(key, current_item->key) == 0)
+		{
+			free(current_item->value);
+			current_item->value = strdup(value);
+			return (1);
+		}
+		current_item = current_item->next;
+	}
+
 	item = create_item(key, value);
 	if (item)
 	{
-		index = key_index((const unsigned char *)key, ht->size);
 		current_item = ht->array[index];
 
 		if (current_item)
