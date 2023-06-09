@@ -23,8 +23,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 		if (current_item)
 			item->next = current_item;
-		else
-			item->next = NULL;
 		
 		ht->array[index] = item;
 		return (1);
