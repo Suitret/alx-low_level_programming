@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *item, *current_item;
 
-	if (!ht || !ht->array)
+	if (!ht || !ht->array || strcmp(key, "") == 0)
 		return (0);
 
 	item = create_item(key, value);
@@ -44,7 +44,7 @@ hash_node_t *create_item(const char *key, const char *value)
 {
 	hash_node_t *item = malloc(sizeof(hash_node_t));
 
-	if (!item)
+	if (!item || !key || !value)
 		return (NULL);
 
 	item->key = malloc(strlen(key) + 1);
