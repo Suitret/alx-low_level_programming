@@ -1,4 +1,4 @@
 CC=gcc
-SRC=main.c school.c
+SRC=$^
 all: main.c school.c
 	@(CC) @(SRC) -o school
